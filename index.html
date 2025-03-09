@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Personal Webpage - WDD 231">
+    <meta name="author" content="Your Name">
+    <title>Eyob Teffera </title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
 </head>
 <body>
-    <h1>wdd 231- Eyob Teffera  </h1>
+    <header>
+        <img src="images/Profile.jpg" alt="Profile Picture">
+        <span>Eyob Teffera </span>
+        <button id="menuButton">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul id="courseList"></ul>
+        </section>
+
+        <section class="location">
+            <h2>Rexburg,Idaho</h2>
+            <img src="images/rexburg.jpg" alt="Baobab Trees" id="courseImage">
+            <p>Rexburg Water Tower</p>
+        </section>
+
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+            <div id="courses"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> 2025 ⛰️ Eyob Teffera ⛰️ Idaho, USA</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>

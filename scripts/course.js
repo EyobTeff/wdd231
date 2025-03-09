@@ -1,36 +1,35 @@
-// course.js
 const courses = [
-    { code: "CSE 110", category: "CSE", completed: false },
-    { code: "WDD 130", category: "WDD", completed: true },
-    { code: "CSE 111", category: "CSE", completed: false },
-    { code: "CSE 210", category: "CSE", completed: true },
-    { code: "WDD 131", category: "WDD", completed: false },
-    { code: "WDD 231", category: "WDD", completed: true }
+    { code: "CSE 110", type: "CSE", completed: true },
+    { code: "WDD 130", type: "WDD", completed: true },
+    { code: "CSE 111", type: "CSE", completed: false },
+    { code: "CSE 210", type: "CSE", completed: true },
+    { code: "WDD 131", type: "WDD", completed: false },
+    { code: "WDD 231", type: "WDD", completed: false }
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-    const courseContainer = document.querySelector("#course-container");
-    const filterButtons = document.querySelectorAll(".filter-btn");
+function displayCourses(filter) {
+    const courseList = document.getElementById("courseList");
+    courseList.innerHTML = "";
 
-    function displayCourses(filter) {
-        courseContainer.innerHTML = "";
-        const filteredCourses = filter === "All" ? courses : courses.filter(course => course.category === filter);
-        
-        filteredCourses.forEach(course => {
-            const courseDiv = document.createElement("div");
-            courseDiv.classList.add("course-card");
-            if (course.completed) courseDiv.classList.add("completed");
-            courseDiv.textContent = course.code;
-            courseContainer.appendChild(courseDiv);
-        });
+    let filteredCourses = courses;
+    if (filter !== "all") {
+        filteredCourses = courses.filter(course => course.type === filter);
     }
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            displayCourses(button.dataset.filter);
-        });
+    filteredCourses.forEach(course => {
+        const div = document.createElement("div");
+        div.textContent = course.code;
+        div.classList.add(course.completed ? "completed" : "pending");
+        courseList.appendChild(div);
     });
+}
 
-    // Show all courses by default
-    displayCourses("All");
+// Event Listeners for filter buttons
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("button[onclick='filterCourses(\"all\")']").addEventListener("click", () => displayCourses("all"));
+    document.querySelector("button[onclick='filterCourses(\"CSE\")']").addEventListener("click", () => displayCourses("CSE"));
+    document.querySelector("button[onclick='filterCourses(\"WDD\")']").addEventListener("click", () => displayCourses("WDD"));
+
+    // Display all courses by default
+    displayCourses("all");
 });

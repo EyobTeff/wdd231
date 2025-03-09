@@ -1,8 +1,5 @@
-// date.js
-document.addEventListener("DOMContentLoaded", () => {
-    // Set current year dynamically
-    document.querySelector("#currentyear").textContent = new Date().getFullYear();
+// Set the current year dynamically
+document.querySelector("#currentyear").textContent = new Date().getFullYear();
 
-    // Set last modified date dynamically
-    document.querySelector("#lastModified").textContent = document.lastModified;
-});
+// Display last modified date
+document.querySelector("#lastModified").textContent = `Last Update: ${document.lastModified}`;

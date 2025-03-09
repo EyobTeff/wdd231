@@ -1,9 +1,8 @@
-// navigation.js
-document.addEventListener("DOMContentLoaded", () => {
-    const navButton = document.querySelector(".menu-button");
-    const navMenu = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector("nav ul");
 
-    navButton.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
+    navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
     });
 });

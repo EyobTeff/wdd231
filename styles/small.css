@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -221,15 +221,4 @@ footer {
     padding: 10px;
     display: block; /* Ensure it's visible */
     margin-left: auto;
-}
-nav ul {
-    list-style: none;
-    display: none; /* Initially hidden */
-    flex-direction: column;
-    background-color: #34495e;
-    padding: 10px;
-}
-
-nav ul.show {
-    display: flex; /* Show when toggled */
 }

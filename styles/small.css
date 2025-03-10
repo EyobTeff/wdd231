@@ -212,3 +212,24 @@ footer {
         grid-template-columns: repeat(3, 1fr); /* Three columns in larger screens */
     }
 }
+#menuButton {
+    background: #fff; /* White background */
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    display: block; /* Ensure it's visible */
+    margin-left: auto;
+}
+nav ul {
+    list-style: none;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    background-color: #34495e;
+    padding: 10px;
+}
+
+nav ul.show {
+    display: flex; /* Show when toggled */
+}

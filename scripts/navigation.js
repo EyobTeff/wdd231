@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navToggle = document.querySelector(".nav-toggle");
+    const menuButton = document.getElementById("menuButton");
     const navMenu = document.querySelector("nav ul");
 
-    navToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-    });
+    if (menuButton && navMenu) {
+        menuButton.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
+        });
+    }
 });

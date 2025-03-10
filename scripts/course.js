@@ -15,7 +15,12 @@ function displayCourses(filter) {
     if (filter !== "all") {
         filteredCourses = courses.filter(course => course.type === filter);
     }
-
+    
+    function calculateCredits() {
+        let total = courses.filter(course => course.completed).length * 3; // Assuming 3 credits per course
+        document.getElementById("creditTotal").textContent = `Total Credits: ${total}`;
+    }
+    
     filteredCourses.forEach(course => {
         const div = document.createElement("div");
         div.textContent = course.code;

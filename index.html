@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Course Home - WDD 231</title>
-        <meta name="description" content="Explore my coursework and projects.">
-        <meta name="author" content="Eyob Teffera">
-        
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Course Home - WDD 231</title>
+    <meta name="description" content="Explore my coursework and projects.">
+    <meta name="author" content="Eyob Teffera">
     
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/small.css">
-        <link rel="stylesheet" href="styles/larger.css">
-    
-        <!-- JavaScript -->
-        <script src="scripts/navigation.js" defer></script>
-        <script src="scripts/date.js" defer></script>
-        <script src="scripts/course.js" defer></script>
-    </head>
-    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <body>
-        <header>
-            <img src="images/profile.jpg" alt="Profile Picture">
-            <span>Eyob Teffera</span>
-            <button id="menuButton">☰</button>
-        </header>
-    
-        <nav>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/profile.jpg" alt="Profile Picture">
+        <span>Eyob Teffera</span>
+        <button id="menuButton">☰</button>
+    </header>
+
+    <nav>
+        <ul id="menuList">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="chamber.html">Chamber</a></li>
+            <li><a href="https://github.com/EyobTeff" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/eyobteffera/" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section>
+            <h2>Course Work</h2>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="chamber.html">Chamber</a></li>
-                <li><a href="https://github.com/EyobTeff" target="_blank">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/eyobteffera/" target="_blank">LinkedIn</a></li>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
             </ul>
-        </nav>
-    
-        <main>
-            <h1>Home</h1>
-    
-            <section>
-                <h2>Course Work</h2>
-                <ul>
-                    <li>Course 1</li>
-                    <li>Course 2</li>
-                    <li>Course 3</li>
-                </ul>
-            </section>
-    
-            <section>
-                <h2>Rexburg, Idaho </h2>
-                <img src="images/rexburg.jpg" alt="Rexburg Tower">
-                <p>Rexburg water tower </p>
-            </section>
-    
-            <section class="certificate-section">
-                <h2>Web and Computer Programming Certificate</h2>
-                <div class="course-buttons">
-                    <button onclick="displayCourses('all')">All</button>
-                    <button onclick="displayCourses('CSE')">CSE</button>
-                    <button onclick="displayCourses('WDD')">WDD</button>
-                </div>
-                <div id="courseList" class="courses-grid"></div> <!-- Ensure this div exists -->
-            </section>
-            
-            
-        </main>
-    
-        <footer>
-            <p>&copy; <span id="currentyear"></span> 2025 ⛰️ Eyob Teffera ⛰️ Idaho, USA</p>
-            <p id="lastModified"></p>
-        </footer>
-    
-    </body>
+        </section>
+
+        <section>
+            <h2>Rexburg, Idaho</h2>
+            <img src="images/rexburg.jpg" alt="Rexburg Tower" loading="lazy">
+            <p>Rexburg water tower</p>
+        </section>
+
+        <section class="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="course-buttons">
+                <button onclick="displayCourses('all')">All</button>
+                <button onclick="displayCourses('CSE')">CSE</button>
+                <button onclick="displayCourses('WDD')">WDD</button>
+            </div>
+            <div id="courseList" class="courses-grid"></div> <!-- Ensure this div exists -->
+            <p id="creditTotal"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 2025 ⛰️ Eyob Teffera ⛰️ Idaho, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Ensure menuButton toggles navigation menu
+        document.getElementById("menuButton").addEventListener("click", function() {
+            document.getElementById("menuList").classList.toggle("show");
+        });
+    </script>
+</body>
 </html>

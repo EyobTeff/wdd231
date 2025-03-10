@@ -1,27 +1,219 @@
 @media screen and (min-width: 768px) {
+    /* Header */
     header {
         display: flex;
         justify-content: space-between;
-        padding: 15px 50px;
+        align-items: center;
+        padding: 50px 50px;
+        background-color: #2c3e50;
+        color: white;
     }
 
+    header img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-right: 15px;
+    }
+
+    /* Navigation */
     nav ul {
         display: flex;
         flex-direction: row;
+        gap: 50px;
+        padding: 10px;
+        margin: 10px;
     }
 
+    nav li {
+        list-style: none;
+    }
+
+    nav a {
+        color:white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 1.1rem;
+        transition: background 0.3s;
+    }
+
+    nav a:hover {
+        background-color: #2a3881;
+        border-radius: 10px;
+    }
+
+    /* Hide menu button on large screens */
     #menuButton {
-        display: none;
+        display:none;
     }
 
+    /* Main Content Layout */
     main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding: 20px;
+        padding: 1px;
     }
 
-    .certificate {
+    section {
+        padding: 50px;
+        border-radius: 50px;
+        background: #2d3748;
+        box-shadow: 0 3px 10px white;
+    }
+
+    /* Certificate Section */
+    .certificate-section {
         grid-column: span 2;
+        background-color: #2d3748;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        color: white;
+    }
+
+    /* Course Buttons */
+    .course-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 1rem;
+    }
+
+    .course-buttons button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .course-buttons button:hover {
+        background-color: #1abc9c;
+        transform: scale(1.05);
+    }
+
+    /* Courses Grid - Adapts for Larger Screens */
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .course {
+        background-color: #1adc9c;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out, background 0.3s;
+    }
+
+    .course:hover {
+        transform: scale(1.05);
+        background-color: #9b5e34;
+    }
+
+    /* Completed Courses - Green */
+.completed {
+    background-color: #2d7f2d; /* Dark green */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.completed:hover {
+    background-color: #3a9e3a; /* Lighter green */
+    transform: scale(1.05);
+}
+
+/* Pending Courses - Red */
+.pending {
+    background-color: #c0392b; /* Dark red */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.pending:hover {
+    background-color: #e74c3c; /* Lighter red */
+    transform: scale(1.05);
+}
+
+
+    /* Footer */
+    footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 15px;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+/* Base styling for courses */
+.course {
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+/* ✅ Completed Courses - Green */
+.completed {
+    background-color: #2d7f2d; /* Dark green */
+    color: white;
+}
+
+.completed:hover {
+    background-color: #3a9e3a; /* Lighter green */
+    transform: scale(1.05);
+}
+
+/* 🚨 Pending Courses - Red */
+.pending {
+    background-color: #c0392b; /* Dark red */
+    color: white;
+}
+
+.pending:hover {
+    background-color: #e74c3c; /* Lighter red */
+    transform: scale(1.05);
+}
+
+/* Course Grid Styling */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns in small screens */
+    gap: 10px;
+    padding: 1rem;
+}
+
+/* For larger screens */
+@media screen and (min-width: 768px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns in larger screens */
+    }
+}
+@media screen and (min-width: 768px) {
+    section.course-work h2 {
+        background-color: #2c3e50; /* Dark blue (adjust as needed) */
+        color: white; /* Ensure text is visible */
+        padding: 15px; /* Add padding for better spacing */
+        text-align: center; /* Center text */
+        border-radius: 8px; /* Rounded corners */
+        background-size: cover; /* Cover entire background */
+        background-position: center; /* Center the background */
     }
 }

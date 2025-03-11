@@ -7,6 +7,7 @@ const courses = [
     { code: "WDD 231", type: "WDD", completed: false }
 ];
 
+// ✅ Function to display courses based on filter
 function displayCourses(filter) {
     const courseList = document.getElementById("courseList");
     courseList.innerHTML = "";
@@ -15,22 +16,24 @@ function displayCourses(filter) {
     if (filter !== "all") {
         filteredCourses = courses.filter(course => course.type === filter);
     }
-    
-    function calculateCredits() {
-        let total = courses.filter(course => course.completed).length * 3; // Assuming 3 credits per course
-        document.getElementById("creditTotal").textContent = `Total Credits: ${total}`;
-    }
-    
+
     filteredCourses.forEach(course => {
         const div = document.createElement("div");
         div.textContent = course.code;
         div.classList.add("course"); // Always add base "course" class
-        div.classList.add(course.completed ? "completed" : "pending"); // Add color-based class
+        div.classList.add(course.completed ? "completed" : "pending"); // Add completed or pending class
         courseList.appendChild(div);
     });
 }
 
-// Ensure the courses are displayed on page load
+// ✅ Function to calculate total completed course credits
+function calculateCredits() {
+    let total = courses.filter(course => course.completed).length * 3; // Assuming 3 credits per completed course
+    document.getElementById("creditTotal").textContent = `Total Credits: ${total}`;
+}
+
+// ✅ Ensure the courses & total credits are displayed on page load
 document.addEventListener("DOMContentLoaded", function () {
     displayCourses("all");
+    calculateCredits(); // Calculate total credits on load
 });

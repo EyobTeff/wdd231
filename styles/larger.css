@@ -3,15 +3,51 @@
     header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items:left;
         padding: 50px 50px;
         background-color: #2c3e50;
         color: white;
     }
-
+    @media screen and (min-width: 768px) {
+        /* Layout Expansion */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    
+        section {
+            flex: 1 1 calc(50% - 20px); /* Makes sections take up 50% width */
+        }
+    
+        .certificate-section {
+            flex-basis: 100%; /* Full-width */
+        }
+    
+        /* Navigation - Desktop Style */
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+    
+        /* Expanding the Course Grid */
+        .courses-grid {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+        }
+    
+        /* Fixing Alignment */
+        .container {
+            display: flex;
+            justify-content:left;
+            align-items:left ;
+        }
+    }
+    
     header img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: 100%;
         margin-right: 15px;
     }
@@ -24,9 +60,6 @@
         padding: 10px;
         margin: 10px;
     }
-
-    #section1
-    {width:100%;}
 
     nav li {
         list-style: none;
@@ -163,7 +196,7 @@
         font-size: 1rem;
         text-align: center;
     }
-
+}
 /* Base styling for courses */
 .course {
     padding: 12px;
@@ -195,6 +228,7 @@
     transform: scale(1.05);
 }
 
+
 /* Course Grid Styling */
 .courses-grid {
     display: grid;
@@ -204,11 +238,12 @@
 }
 
 /* For larger screens */
+@media screen and (min-width: 768px) {
     .courses-grid {
         grid-template-columns: repeat(3, 1fr); /* Three columns in larger screens */
     }
-
-
+}
+@media screen and (min-width: 768px) {
     section.course-work h2 {
         background-color: #2c3e50; /* Dark blue (adjust as needed) */
         color: white; /* Ensure text is visible */

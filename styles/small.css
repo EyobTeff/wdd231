@@ -1,10 +1,37 @@
+/* Default Mobile Layout */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
 }
+
+/* Navigation - Mobile Style */
+nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #34495e;
+}
+
+nav ul.show {
+    display: flex;
+}
+
+/* Mobile-Friendly Course Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    gap: 10px;
+    padding: 1rem;
+}
+
+/* Images - Prevent Stretching */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 header {
     background-color: #2c3e50;
@@ -16,8 +43,8 @@ header {
 }
 
 header img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-right: 10px;
 }

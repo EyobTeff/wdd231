@@ -24,12 +24,23 @@ function displayCourses(filter) {
         div.classList.add(course.completed ? "completed" : "pending"); // Add completed or pending class
         courseList.appendChild(div);
     });
+
+    calculateCredits(); // Ensure credits update when filtering
 }
 
-// ✅ Function to calculate total completed course credits
+// ✅ Function to calculate and display credits separately
 function calculateCredits() {
-    let total = courses.filter(course => course.completed).length * 3; // Assuming 3 credits per completed course
-    document.getElementById("creditTotal").textContent = `Total Credits: ${total}`;
+    const creditPerCourse = 2; // Assuming each course is worth 3 credits
+
+    // Calculate credits separately for CSE, WDD, and total
+    let totalCredits = courses.filter(course => course.completed).length * creditPerCourse;
+    let cseCredits = courses.filter(course => course.completed && course.type === "CSE").length * creditPerCourse;
+    let wddCredits = courses.filter(course => course.completed && course.type === "WDD").length * creditPerCourse;
+
+    // Update the respective elements in the HTML
+    document.getElementById("creditTotal").textContent = `Total Credits: ${totalCredits}`;
+    document.getElementById("cseCreditTotal").textContent = `CSE Credits: ${cseCredits}`;
+    document.getElementById("wddCreditTotal").textContent = `WDD Credits: ${wddCredits}`;
 }
 
 // ✅ Ensure the courses & total credits are displayed on page load

@@ -20,7 +20,7 @@ function displayCourses(filter) {
     filteredCourses.forEach(course => {
         const div = document.createElement("div");
         div.textContent = course.code;
-        div.classList.add("course"); // Always add base "course" class
+        div.classList.add("course"); // Always add base "course" class and 
         div.classList.add(course.completed ? "completed" : "pending"); // Add completed or pending class
         courseList.appendChild(div);
     });

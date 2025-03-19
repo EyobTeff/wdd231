@@ -1,67 +1,93 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
+/* Header and Footer */
 header, footer {
-    background: #333;
+    background-color: #003366; /* Dark Blue */
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 15px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
+/* Navigation */
+nav a {
     color: white;
-    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
 }
 
+nav a:hover {
+    background-color: #ff9900; /* Orange accent */
+    color: #003366; /* Dark Blue */
+}
+
+/* Main content */
+main {
+    padding: 20px;
+}
+
+/* Directory Cards */
+.member-card {
+    background-color: #c2bae5; /* White background */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+button {
+    background-color: #ff9900; /* Orange */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #cc7700; /* Darker orange */
+}
+
+/* Footer */
+footer p {
+    font-size: 14px;
+}
 #directory {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px;
+    gap: 20px;
+    padding: 20px;
 }
 
-.member-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-    background: #f9f9f9;
+/* Grid View */
+#directory.grid {
+    flex-direction: row;
 }
 
-.member-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+#directory.grid .member-card {
+    width: 30%; /* 3 cards per row */
 }
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.list .member-card {
-    width: 100%;
-    display: flex;
+/* List View */
+#directory.list {
+    flex-direction: column;
     align-items: center;
 }
 
-.list .member-card img {
-    margin-right: 10px;
+#directory.list .member-card {
+    width: 80%; /* Full-width cards */
 }

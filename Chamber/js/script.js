@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const directory = document.getElementById("directory");
     const toggleView = document.getElementById("toggleView");
-
+    
     let currentView = "grid"; // Default view
-    let members = [];
+    let members = []; // Store data once fetched
 
     async function fetchMembers() {
         const response = await fetch("data/members.json");
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function displayMembers(members, view) {
-        directory.innerHTML = "";
-        directory.className = view;
+        directory.innerHTML = ""; // Clear previous content
+        directory.className = view; // Apply correct layout
 
         members.forEach(member => {
             const card = document.createElement("div");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     toggleView.addEventListener("click", () => {
-        currentView = (currentView === "grid") ? "list" : "grid";
+        currentView = (currentView === "grid") ? "list" : "grid"; // Toggle state
         displayMembers(members, currentView);
     });
 

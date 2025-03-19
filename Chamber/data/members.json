@@ -1,18 +1,18 @@
 [
     {
-        "name": "ABC Corp",
-        "address": "123 Main St, Cityville",
-        "phone": "(123) 456-7890",
-        "website": "https://abccorp.com",
-        "image": "images/abc.png",
+        "name": "Legacy Dance Academy",
+        "address": "180 Sugar Avenue Suite 2, Sugar City, ID 83448",
+        "phone": "+12082512958",
+        "website": "https://legacydanceacademyidaho.com/",
+        "image": "images/legacy.jpg",
         "membershipLevel": 3
     },
     {
-        "name": "XYZ Industries",
-        "address": "456 Elm St, Townsville",
-        "phone": "(987) 654-3210",
-        "website": "https://xyzindustries.com",
-        "image": "images/xyz.png",
+        "name": "Radiation Solutions",
+        "address": "229 Sugar Avenue, Sugar City, ID 83448",
+        "phone": "+12082063203",
+        "website": "http://www.radiationsolutionsonline.com/",
+        "image": "images/radiation-solution.jpg",
         "membershipLevel": 2
     }
 ]

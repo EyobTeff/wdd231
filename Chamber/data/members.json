@@ -1,0 +1,18 @@
+[
+    {
+        "name": "ABC Corp",
+        "address": "123 Main St, Cityville",
+        "phone": "(123) 456-7890",
+        "website": "https://abccorp.com",
+        "image": "images/abc.png",
+        "membershipLevel": 3
+    },
+    {
+        "name": "XYZ Industries",
+        "address": "456 Elm St, Townsville",
+        "phone": "(987) 654-3210",
+        "website": "https://xyzindustries.com",
+        "image": "images/xyz.png",
+        "membershipLevel": 2
+    }
+]

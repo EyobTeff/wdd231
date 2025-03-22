@@ -14,5 +14,45 @@
         "website": "http://www.radiationsolutionsonline.com/",
         "image": "images/radiation-solution.jpg",
         "membershipLevel": 2
+    },
+    {
+        "name": "John S Pocock Trucking",
+        "address": "453 Business Loop, Sugar City, ID 83448",
+        "phone": "+12083591401",
+        "website": "https://www.pococktruck.com/",
+        "image": "images/pocock-trucking.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Circuit Trucking",
+        "address": "480 3rd Ave N, Sugar City, ID 83448",
+        "phone": "+12083569038",
+        "website": "https://circuit5.wixsite.com/circuittrucking",
+        "image": "images/circuit-trucking LLc.jpg",
+        "membershipLevel": 2
+    },
+    {
+        "name": "ProPeat Fertilizer",
+        "address": "250 Pro Peat Dr, Sugar City, ID 83448",
+        "phone": "+12083727328",
+        "website": "https://www.propeat.com/",
+        "image": "images/pro-peat.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Pursuit E-Bikes LLC.",
+        "address": "411 Business Loop A1, Sugar City, ID 83448",
+        "phone": "+18559971881",
+        "website": "https://manlymoving.com/",
+        "image": "images/pursuit-e-bikes.jpg",
+        "membershipLevel": 2
+    },
+    {
+        "name": "MissionShoe by Kaiback",
+        "address": "573 Business Loop, Sugar City, ID 83448",
+        "phone": "+12085720056",
+        "website": "http://www.missionshoestore.com/",
+        "image": "images/mission-shoe.jpg",
+        "membershipLevel": 3
     }
 ]

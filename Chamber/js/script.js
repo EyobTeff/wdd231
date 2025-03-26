@@ -1,4 +1,4 @@
-// Update Year & Last Modified Date 
+// Update Year & Last Modified Date
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
@@ -38,30 +38,26 @@ document.getElementById("toggleView").addEventListener("click", () => {
 
 // Fetch Weather Data
 document.addEventListener("DOMContentLoaded", () => {
-    const apiKey = "YOUR_API_KEY"; // Replace with your actual OpenWeatherMap API key
-    const city = "Sugar City"; // Change to your chamber location
-    const country = "US"; // Adjust if necessary
+    const apiKey = "50f96054d10a4e83f3d1105608e49449"; // Replace with your valid API key
+    const city = "Sugar City";
+    const country = "US";
 
     async function fetchWeather() {
         try {
             const response = await fetch(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`
             );
+
+            if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
+
             const data = await response.json();
 
-            if (response.ok) {
-                document.getElementById("weather-description").textContent =
-                    data.weather[0].description.toUpperCase();
-                document.getElementById("weather-temp").textContent = `${Math.round(data.main.temp)}°F`;
-                fetchForecast();
-            } else {
-                document.getElementById("weather-description").textContent =
-                    "Weather data unavailable";
-            }
+            document.getElementById("weather").innerHTML = `
+                <p>🌡️ ${Math.round(data.main.temp)}°F - ${data.weather[0].description}</p>
+            `;
         } catch (error) {
             console.error("Weather fetch error:", error);
-            document.getElementById("weather-description").textContent =
-                "Unable to retrieve weather";
+            document.getElementById("weather").innerHTML = "Weather data unavailable";
         }
     }
 
@@ -70,20 +66,24 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(
                 `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`
             );
+            if (!response.ok) throw new Error("Failed to load forecast");
+
             const data = await response.json();
 
-            if (response.ok) {
-                const forecastText = `${Math.round(data.list[8].main.temp)}°F, 
-                                      ${Math.round(data.list[16].main.temp)}°F, 
-                                      ${Math.round(data.list[24].main.temp)}°F`;
-                document.getElementById("weather-forecast").textContent = forecastText;
-            }
+            // Extract three different time periods for the forecast
+            const forecastText = `
+                ${Math.round(data.list[8].main.temp)}°F, 
+                ${Math.round(data.list[16].main.temp)}°F, 
+                ${Math.round(data.list[24].main.temp)}°F
+            `;
+            document.getElementById("weather-forecast").textContent = forecastText;
+
         } catch (error) {
             console.error("Forecast fetch error:", error);
-            document.getElementById("weather-forecast").textContent =
-                "Forecast unavailable";
+            document.getElementById("weather-forecast").textContent = "Forecast unavailable";
         }
     }
 
     fetchWeather();
+    fetchForecast();
 });

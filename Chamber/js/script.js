@@ -7,14 +7,30 @@ document.getElementById("menu-toggle").addEventListener("click", () => {
     const menu = document.getElementById("menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            const menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        });
+    }
+});
 
 // Fetch Directory Data
 async function fetchDirectory() {
     try {
         const response = await fetch("data/members.json");
-        if (!response.ok) throw new Error("Failed to load members.json");
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
         const members = await response.json();
         const directory = document.getElementById("directory");
+
+        if (members.length === 0) {
+            directory.innerHTML = "<p>No members found.</p>";
+            return;
+        }
 
         directory.innerHTML = members.map(m => `
             <div class="directory-card">
@@ -30,6 +46,7 @@ async function fetchDirectory() {
     }
 }
 fetchDirectory();
+
 
 // Toggle Grid/List View
 document.getElementById("toggleView").addEventListener("click", () => {

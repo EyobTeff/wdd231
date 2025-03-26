@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chamber of Commerce - Supporting Local Businesses">
+    <meta name="author" content="Eyob Teffera">
+    
+    <meta property="og:title" content="Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/preview.png">
+    <meta property="og:url" content="https://yourwebsite.com/chamber/index.html">
+    
+    <title>Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Chamber of Commerce</h1>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <img src="images/sugar-city.jpg" alt="Welcome to the Chamber">
+            <div class="hero-text">
+                <h2>Supporting Local Businesses</h2>
+                <a href="join.html" class="cta-button">Join Us</a>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="cta">
+            <h3>Grow Your Business with Us</h3>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </section>
+
+        <!-- Current Events -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <p>📅 Business Networking – April 15, 2025</p>
+            <p>📅 Marketing Workshop – May 3, 2025</p>
+        </section>
+
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <p id="weather-description">Loading...</p>
+            <p><strong>Temperature:</strong> <span id="weather-temp"></span>°F</p>
+            <p><strong>Forecast:</strong> <span id="weather-forecast"></span></p>
+        </section>
+        
+
+        <!-- Company Spotlight -->
+        <section id="spotlight">
+            <h2>Member Spotlights</h2>
+        </section>
+
+        <!-- Directory Section -->
+        <button id="toggleView">Toggle Grid/List</button>
+        <section id="directory" class="grid-view"></section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Chamber of Commerce | 2025 ⛰️ Eyob Teffera ⛰️ | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

@@ -159,3 +159,42 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Ensures horizontal layout */
+    justify-content: space-around; /* Distributes items evenly */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items in smaller screens */
+        text-align: center;
+    }
+}
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb span {
+    font-weight: bold;
+}

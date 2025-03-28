@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce - Supporting Local Businesses">
+    <meta name="description" content="Sugar City Chamber of Commerce - Supporting Local Businesses">
     <meta name="author" content="Eyob Teffera">
     
-    <meta property="og:title" content="Chamber of Commerce">
+    <meta property="og:title" content="Sugar City Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/preview.png">
-    <meta property="og:url" content="https://yourwebsite.com/chamber/index.html">
+    <meta property="og:url" content="https://sugarcitychamber.com/index.html">  
     
-    <title>Chamber of Commerce</title>
+    <title>Sugar City Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Chamber of Commerce</h1>
         <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
         <nav>
             <ul id="menu">
@@ -36,6 +35,7 @@
         <section id="hero">
             <img src="images/sugar-city.jpg" alt="Welcome to the Chamber">
             <div class="hero-text">
+                <h1>Sugar City Chamber of Commerce</h1>  <!-- ✅ Fixed: Moved inside <main> -->
                 <h2>Supporting Local Businesses</h2>
                 <a href="join.html" class="cta-button">Join Us</a>
             </div>
@@ -62,7 +62,6 @@
             <p><strong>Forecast:</strong> <span id="weather-forecast"></span></p>
         </section>
         
-
         <!-- Company Spotlight -->
         <section id="spotlight">
             <h2>Member Spotlights</h2>
@@ -74,7 +73,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Chamber of Commerce | 2025 ⛰️ Eyob Teffera ⛰️ | Last Updated: <span id="lastModified"></span></p>
+        <p>&copy; <span id="year"></span> Sugar City Chamber of Commerce | Last Updated: <span id="lastModified"></span></p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,96 @@
+/* 🔹 Normalize.css - Ensures consistent styles across browsers */
+
+/* 1️⃣ Reset margin, padding, and box-sizing */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2️⃣ Ensure block elements behave consistently */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* 3️⃣ Improve text rendering */
+body {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 4️⃣ Remove default list styles */
+ol, ul {
+    list-style: none;
+}
+
+/* 5️⃣ Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 6️⃣ Reset table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* 7️⃣ Improve form elements */
+button, input, select, textarea {
+    font: inherit;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+/* 8️⃣ Ensure buttons are interactive */
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #007bff;
+}
+
+/* 9️⃣ Remove text decoration from links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 🔟 Improve accessibility & keyboard navigation */
+:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    transition: outline 0.2s ease;
+}
+
+/* 🔹 Additional Refinements */
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent text overflow issues */
+pre, code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Ensure flexbox works well */
+body, html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMobileNavigation();
     fetchDirectory();
     setupViewToggle();
-    fetchWeather();
-    fetchForecast();
+    fetchWeatherData();
 });
 
 /* 🔹 Update Year & Last Modified Date */
@@ -20,39 +19,37 @@ function setupMobileNavigation() {
     const menu = document.getElementById("menu");
 
     if (menuToggle && menu) {
-        menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
+        menuToggle.addEventListener("click", () => menu.classList.toggle("active"));
     }
 }
 
 /* 🔹 Fetch and Display Directory Data */
 async function fetchDirectory() {
+    const directory = document.getElementById("directory");
+    if (!directory) return;
+
     try {
         const response = await fetch("data/members.json");
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const members = await response.json();
-        const directory = document.getElementById("directory");
-
-        if (!members || members.length === 0) {
+        if (!members.length) {
             directory.innerHTML = "<p>No members found.</p>";
             return;
         }
 
-        directory.innerHTML = members
-            .map(m => `
-                <div class="directory-card">
-                    <img src="${m.image}" alt="${m.name} Logo" loading="lazy">
-                    <h3>${m.name}</h3>
-                    <p>${m.phone}</p>
-                    <a href="${m.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>
-                </div>
-            `)
-            .join("");
+        directory.innerHTML = members.map(member => `
+            <div class="directory-card">
+                <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
+                <h3>${member.name}</h3>
+                <p>${member.phone}</p>
+                <a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>
+            </div>
+        `).join("");
+
     } catch (error) {
         console.error("Error fetching directory:", error);
-        document.getElementById("directory").innerHTML = "<p>Failed to load directory data.</p>";
+        directory.innerHTML = "<p>Failed to load directory data.</p>";
     }
 }
 
@@ -62,65 +59,67 @@ function setupViewToggle() {
     const directory = document.getElementById("directory");
 
     if (toggleButton && directory) {
-        toggleButton.addEventListener("click", () => {
-            directory.classList.toggle("list-view");
-        });
+        toggleButton.addEventListener("click", () => directory.classList.toggle("list-view"));
     }
 }
 
-/* 🔹 Fetch Weather Data */
-async function fetchWeather() {
+/* 🔹 Fetch Weather & 3-Day Forecast */
+async function fetchWeatherData() {
     const apiKey = "50f96054d10a4e83f3d1105608e49449"; // Replace with a valid API key
     const city = "Sugar City";
     const country = "US";
-    const weatherElement = document.getElementById("weather");
 
-    if (!weatherElement) return;
-
-    try {
-        const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`
-        );
-
-        if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
-
-        const data = await response.json();
-        weatherElement.innerHTML = `
-            <p>🌡️ ${Math.round(data.main.temp)}°F - ${data.weather[0].description}</p>
-        `;
-    } catch (error) {
-        console.error("Weather fetch error:", error);
-        weatherElement.innerHTML = "Weather data unavailable";
-    }
-}
-
-/* 🔹 Fetch Weather Forecast */
-async function fetchForecast() {
-    const apiKey = "50f96054d10a4e83f3d1105608e49449"; // Replace with a valid API key
-    const city = "Sugar City";
-    const country = "US";
+    const weatherElement = document.getElementById("weather-description");
+    const tempElement = document.getElementById("weather-temp");
     const forecastElement = document.getElementById("weather-forecast");
 
-    if (!forecastElement) return;
+    if (!weatherElement || !tempElement || !forecastElement) return;
 
     try {
-        const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`
-        );
+        const [weatherResponse, forecastResponse] = await Promise.all([
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`),
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`)
+        ]);
 
-        if (!response.ok) throw new Error("Failed to load forecast");
+        if (!weatherResponse.ok || !forecastResponse.ok) throw new Error("Failed to load weather data");
 
-        const data = await response.json();
+        const weatherData = await weatherResponse.json();
+        const forecastData = await forecastResponse.json();
 
-        // Extract three different time periods for the forecast
-        const forecastText = `
-            ${Math.round(data.list[8]?.main.temp || "N/A")}°F, 
-            ${Math.round(data.list[16]?.main.temp || "N/A")}°F, 
-            ${Math.round(data.list[24]?.main.temp || "N/A")}°F
-        `;
-        forecastElement.textContent = forecastText;
+        // Display current weather
+        weatherElement.textContent = weatherData.weather[0].description;
+        tempElement.textContent = `${Math.round(weatherData.main.temp)}°F`;
+
+        // Extract three full-day forecasts with actual day names
+        const dailyForecast = getThreeDayForecast(forecastData.list);
+        forecastElement.innerHTML = dailyForecast.map(({ day, temp }) => 
+            `<p><strong>${day}:</strong> ${temp}°F</p>`
+        ).join("");
+
     } catch (error) {
-        console.error("Forecast fetch error:", error);
-        forecastElement.textContent = "Forecast unavailable";
+        console.error("Weather fetch error:", error);
+        weatherElement.textContent = "Weather data unavailable";
+        forecastElement.innerHTML = "<p>Forecast unavailable</p>";
     }
+}
+
+/* 🔹 Helper Function: Extract Three-Day Forecast */
+function getThreeDayForecast(forecastList) {
+    const dailyTemps = [];
+    const daysSet = new Set();
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    for (let forecast of forecastList) {
+        const forecastDate = new Date(forecast.dt_txt);
+        const dayName = daysOfWeek[forecastDate.getDay()];
+
+        if (!daysSet.has(dayName)) {
+            dailyTemps.push({ day: dayName, temp: Math.round(forecast.main.temp) });
+            daysSet.add(dayName);
+        }
+
+        if (dailyTemps.length === 3) break; // Stop when we have 3 future days
+    }
+
+    return dailyTemps.length === 3 ? dailyTemps : [{ day: "N/A", temp: "N/A" }];
 }

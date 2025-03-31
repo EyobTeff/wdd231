@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Sugar City Chamber of Commerce and grow your business network.">
+    <meta name="author" content="Eyob Teffera">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join Sugar City Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://eyobteff.github.io/chamber/images/preview.png">
+    <meta property="og:url" content="https://eyobteff.github.io/wdd231/chamber/join.html">
+    <meta property="og:description" content="Apply to become a member of the Sugar City Chamber of Commerce.">
+
+    <title>Join Sugar City Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="join-hero">
+            <h1>Join the Sugar City Chamber of Commerce</h1>
+            <p>Become a member and grow your business network.</p>
+        </section>
+
+        <section id="membership-form">
+            <h2>Membership Application</h2>
+            <form method="get" action="thankyou.html">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" title="First Name" autocomplete="given-name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" title="Last Name" autocomplete="family-name" required>
+
+                <label for="organization_title">Organizational Title:</label>
+                <input type="text" id="organization_title" name="organization_title" title="Your Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@email.com" required>
+
+                <label for="phone">Mobile Phone Number:</label>
+                <input type="tel" id="phone" name="phone" title="Mobile Phone" autocomplete="tel" required>
+
+                <label for="organization">Business/Organization Name:</label>
+                <input type="text" id="organization" name="organization" title="Business Name" autocomplete="organization" required>
+
+                <label for="membership">Membership Level:</label>
+                <select id="membership" name="membership" required>
+                    <option value="NP">Non-Profit (Free)</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                </select>
+
+                <label for="description">Business/Organization Description:</label>
+                <textarea id="description" name="description" title="Business Description"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Apply Now">
+            </form>
+        </section>
+
+        <section id="membership-levels">
+            <h2>Membership Levels</h2>
+            <div class="membership-card">
+                <h3>Non-Profit Membership</h3>
+                <p>For non-profit organizations (Free).</p>
+                <button onclick="document.getElementById('npModal').showModal()">Learn More</button>
+            </div>
+
+            <div class="membership-card">
+                <h3>Bronze Membership</h3>
+                <p>Access to networking events and directory listing.</p>
+                <button onclick="document.getElementById('bronzeModal').showModal()">Learn More</button>
+            </div>
+
+            <div class="membership-card">
+                <h3>Silver Membership</h3>
+                <p>Additional marketing and sponsorship opportunities.</p>
+                <button onclick="document.getElementById('silverModal').showModal()">Learn More</button>
+            </div>
+
+            <div class="membership-card">
+                <h3>Gold Membership</h3>
+                <p>Premium visibility and advertising benefits.</p>
+                <button onclick="document.getElementById('goldModal').showModal()">Learn More</button>
+            </div>
+        </section>
+
+        <!-- Modals for Membership Details -->
+        <dialog id="npModal">
+            <h2>Non-Profit Membership Benefits</h2>
+            <p>✔ Free Membership<br>✔ Community support<br>✔ Basic networking events</p>
+            <button onclick="document.getElementById('npModal').close()">Close</button>
+        </dialog>
+
+        <dialog id="bronzeModal">
+            <h2>Bronze Membership Benefits</h2>
+            <p>✔ Business directory listing<br>✔ Access to networking events<br>✔ Monthly newsletter</p>
+            <button onclick="document.getElementById('bronzeModal').close()">Close</button>
+        </dialog>
+
+        <dialog id="silverModal">
+            <h2>Silver Membership Benefits</h2>
+            <p>✔ All Bronze benefits<br>✔ Advertising discounts<br>✔ Sponsor opportunities</p>
+            <button onclick="document.getElementById('silverModal').close()">Close</button>
+        </dialog>
+
+        <dialog id="goldModal">
+            <h2>Gold Membership Benefits</h2>
+            <p>✔ All Silver benefits<br>✔ Featured directory listing<br>✔ VIP event access</p>
+            <button onclick="document.getElementById('goldModal').close()">Close</button>
+        </dialog>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Sugar City Chamber of Commerce | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById("timestamp").value = new Date().toISOString();
+    </script>
+</body>
+</html>

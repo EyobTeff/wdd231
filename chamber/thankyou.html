@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Sugar City Chamber of Commerce!">
+    <title>Thank You | Sugar City Chamber</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/thankyou.js"></script>
+</head>
+<body>
+    <header>
+        <button id="menu-toggle">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Thank You for Joining!</h1>
+        <p>We appreciate your interest in the Sugar City Chamber of Commerce. Below are the details you submitted:</p>
+
+        <section id="form-details">
+            <h2>Your Submission</h2>
+            <ul>
+                <li><strong>First Name:</strong> <span id="firstName"></span></li>
+                <li><strong>Last Name:</strong> <span id="lastName"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+                <li><strong>Mobile Phone:</strong> <span id="phone"></span></li>
+                <li><strong>Business Name:</strong> <span id="businessName"></span></li>
+                <li><strong>Membership Level:</strong> <span id="membershipLevel"></span></li>
+                <li><strong>Submitted On:</strong> <span id="timestamp"></span></li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="button">Return to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Sugar City Chamber of Commerce</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Sugar City</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px)" />
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)" />
+  <script defer src="scripts/discover.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Sugar City Chamber of Commerce</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html">Join</a>
+      <a href="discover.html" class="active">Discover</a>
+    </nav>
+  </header>
+
+  <main>
+    <aside id="visit-message"></aside>
+
+    <section class="discover-grid" id="interest-cards">
+      <!-- Cards will be injected here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sugar City Chamber | Last Updated: <span id="last-modified"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById("last-modified").textContent = document.lastModified;
+  </script>
+</body>
+</html>

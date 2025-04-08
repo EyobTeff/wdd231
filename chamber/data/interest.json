@@ -1,0 +1,51 @@
+[
+    {
+      "title": "Sugar City Park",
+      "image": "images/sugar-park.webp",
+      "address": "123 Park Lane, Sugar City, ID",
+      "description": "A beautiful local park with walking trails, picnic areas, and a playground."
+    },
+    {
+      "title": "Sugar City Museum",
+      "image": "images/museum.webp",
+      "address": "456 Heritage St, Sugar City, ID",
+      "description": "Explore the rich history and culture of Sugar City."
+    },
+    {
+      "title": "Rexburg Rapids",
+      "image": "images/rexburg-rapids.webp",
+      "address": "175 W 2nd N, Rexburg, ID",
+      "description": "A nearby waterpark perfect for cooling off during summer months."
+    },
+    {
+      "title": "Henry's Fork Greenway",
+      "image": "images/greenway.webp",
+      "address": "Greenway Trail, Sugar City, ID",
+      "description": "Scenic riverside trail for walking and biking."
+    },
+    {
+      "title": "Sand Dunes",
+      "image": "images/sand-dunes.webp",
+      "address": "Egin Lake Rd, St Anthony, ID",
+      "description": "Famous dunes for ATV rides and family fun just minutes away."
+    },
+    {
+      "title": "Sugar City Library",
+      "image": "images/library.webp",
+      "address": "789 Bookworm Blvd, Sugar City, ID",
+      "description": "Community library offering books, computers, and events."
+    },
+    {
+      "title": "Teton View",
+      "image": "images/teton-view.webp",
+      "address": "Scenic Overlook, Sugar City, ID",
+      "description": "Capture breathtaking views of the Tetons from this local lookout."
+    },
+    {
+      "title": "Local Farmer’s Market",
+      "image": "images/farmers-market.webp",
+      "address": "Market Square, Sugar City, ID",
+      "description": "Fresh local produce and artisan goods every Saturday."
+    }
+  ]
+  

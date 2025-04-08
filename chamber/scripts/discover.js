@@ -1,49 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const interestCards = document.getElementById("interest-cards");
-
-  fetch("data/interest.json")
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(place => {
-        const card = document.createElement("section");
-        card.classList.add("interest-card");
-
-        card.innerHTML = `
-          <h2>${place.name}</h2>
-          <figure>
-            <img src="images/${place.image}" alt="${place.name}">
-          </figure>
-          <address>${place.address}</address>
-          <p>${place.description}</p>
-          <button>Learn More</button>
-        `;
-
-        interestCards.appendChild(card);
+    const cardsContainer = document.getElementById("interest-cards");
+  
+    fetch("data/interest.json")
+      .then(res => res.json())
+      .then(data => {
+        data.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.style.gridArea = `card${index + 1}`;
+          card.innerHTML = `
+            <h2>${item.title}</h2>
+            <figure>
+              <img src="${item.image}" alt="${item.title}">
+            </figure>
+            <address>${item.address}</address>
+            <p>${item.description}</p>
+            <button>Learn More</button>
+          `;
+          cardsContainer.appendChild(card);
+        });
       });
-    });
-
-  // localStorage visitor message
-  const sidebar = document.createElement("aside");
-  sidebar.classList.add("visitor-message");
-
-  const lastVisit = localStorage.getItem("lastVisit");
-  const now = Date.now();
-  let message = "";
-
-  if (!lastVisit) {
-    message = "Welcome! Let us know if you have any questions.";
-  } else {
-    const daysPassed = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-    if (daysPassed < 1) {
-      message = "Back so soon! Awesome!";
-    } else if (daysPassed === 1) {
-      message = "You last visited 1 day ago.";
+  
+    // localStorage visit message
+    const visitArea = document.getElementById("visit-message");
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = Date.now();
+  
+    if (!lastVisit) {
+      visitArea.textContent = "Welcome! Let us know if you have any questions.";
     } else {
-      message = `You last visited ${daysPassed} days ago.`;
+      const daysSince = Math.floor((now - Number(lastVisit)) / (1000 * 60 * 60 * 24));
+      visitArea.textContent =
+        daysSince < 1
+          ? "Back so soon! Awesome!"
+          : `You last visited ${daysSince} ${daysSince === 1 ? "day" : "days"} ago.`;
     }
-  }
-
-  sidebar.textContent = message;
-  document.querySelector("main").prepend(sidebar);
-  localStorage.setItem("lastVisit", now);
-});
+  
+    localStorage.setItem("lastVisit", now.toString());
+  });
+  

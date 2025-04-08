@@ -1,25 +1,25 @@
 [
     {
-      "title": "Sugar City Park",
-      "image": "images/sugar-park.webp",
-      "address": "123 Park Lane, Sugar City, ID",
-      "description": "A beautiful local park with walking trails, picnic areas, and a playground."
+      "title": "Sugar City Disc Golf",
+      "image": "images/sugar-park.jpg",
+      "address": "S Front st, Sugar City, ID",
+      "description": "A beautiful local park, picnic areas,a playground and 18 hole Disc golf."
     },
     {
-      "title": "Sugar City Museum",
-      "image": "images/museum.webp",
-      "address": "456 Heritage St, Sugar City, ID",
-      "description": "Explore the rich history and culture of Sugar City."
+      "title": "Sugar City Classics",
+      "image": "images/museum.jpg",
+      "address": "125 E Ctr St, Sugar City, ID",
+      "description": "Explore the rich history and culture of Sugar City and a classical car collection."
     },
     {
       "title": "Rexburg Rapids",
-      "image": "images/rexburg-rapids.webp",
+      "image": "images/rexburg-rapids.jpg",
       "address": "175 W 2nd N, Rexburg, ID",
       "description": "A nearby waterpark perfect for cooling off during summer months."
     },
     {
       "title": "Henry's Fork Greenway",
-      "image": "images/greenway.webp",
+      "image": "images/greenway.jpg",
       "address": "Greenway Trail, Sugar City, ID",
       "description": "Scenic riverside trail for walking and biking."
     },
@@ -32,19 +32,19 @@
     {
       "title": "Sugar City Library",
       "image": "images/library.webp",
-      "address": "789 Bookworm Blvd, Sugar City, ID",
+      "address": "1 Digger Dr, Sugar City, ID 83448",
       "description": "Community library offering books, computers, and events."
     },
     {
-      "title": "Teton View",
+      "title": "Teton Dam",
       "image": "images/teton-view.webp",
-      "address": "Scenic Overlook, Sugar City, ID",
+      "address": "Newdale, ID",
       "description": "Capture breathtaking views of the Tetons from this local lookout."
     },
     {
       "title": "Local Farmer’s Market",
       "image": "images/farmers-market.webp",
-      "address": "Market Square, Sugar City, ID",
+      "address": "2983 E 2000 N, Sugar City, ID",
       "description": "Fresh local produce and artisan goods every Saturday."
     }
   ]

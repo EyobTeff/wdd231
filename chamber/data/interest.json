@@ -31,19 +31,19 @@
     },
     {
       "title": "Sugar City Library",
-      "image": "images/library.webp",
+      "image": "images/library.jpg",
       "address": "1 Digger Dr, Sugar City, ID 83448",
       "description": "Community library offering books, computers, and events."
     },
     {
       "title": "Teton Dam",
-      "image": "images/teton-view.webp",
+      "image": "images/teton-view.jpg",
       "address": "Newdale, ID",
       "description": "Capture breathtaking views of the Tetons from this local lookout."
     },
     {
       "title": "Local Farmer’s Market",
-      "image": "images/farmers-market.webp",
+      "image": "images/farmers-market.jpg ",
       "address": "2983 E 2000 N, Sugar City, ID",
       "description": "Fresh local produce and artisan goods every Saturday."
     }

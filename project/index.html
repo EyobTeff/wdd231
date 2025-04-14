@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Hiking Trails Guide</title>
+  <meta name="description" content="Explore local hiking trails with detailed information and reviews." />
+  <meta name="author" content="Eyob Teffera" />
+  <meta property="og:title" content="Local Hiking Trails Guide" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.webp" />
+  <meta property="og:url" content="https://eyobteff.github.io/wdd231/local-hiking-trails-guide/" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px)" />
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)" />
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Eastern Idaho Peaks</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="trails.html">Trails</a>
+      <a href="review.html">Submit Review</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <img src="images/hiking.webp" alt="Scenic hiking trail" loading="lazy" />
+      <h2>Discover Your Next Adventure</h2>
+    </section>
+    <section class="highlights" id="trail-highlights">
+     
+    </section>
+  </main>
+  <div id="modal" class="modal">
+    <div class="modal-content-wrapper">
+      <p id="modal-content"></p>
+      <button onclick="import('./scripts/modal.js').then(m => m.closeModal())">Close</button>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Local Hiking Trails Guide | Last Updated: <span id="last-modified"></span></p>
+  </footer>
+  <script>
+    document.getElementById("last-modified").textContent = document.lastModified;
+  </script>
+</body>
+</html>

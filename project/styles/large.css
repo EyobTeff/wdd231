@@ -1,0 +1,80 @@
+/* styles/large.css */
+
+/* Set a wider container size */
+body {
+    max-width: 90rem; /* Equivalent to 1440px assuming 1rem = 16px */
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Trail card styles for larger screens */
+  .trail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .trail-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .trail-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Optional: Make images inside cards cover full width nicely */
+  .trail-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    border-radius: 1rem 1rem 0 0;
+  }
+  
+  /* Card content styling */
+  .trail-card h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #9bf3a0;
+  }
+  
+  .trail-card p {
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  .hero {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Cancels container padding if needed */
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .hero h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+  }
+  

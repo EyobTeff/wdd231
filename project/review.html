@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Trail Review - Local Hiking Trails Guide</title>
+  <meta name="description" content="Submit your review for a local hiking trail." />
+  <meta name="author" content="Eyob Teffera" />
+  <meta property="og:title" content="Submit Trail Review - Local Hiking Trails Guide" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.webp" />
+  <meta property="og:url" content="https://eyobteff.github.io/wdd231/local-hiking-trails-guide/review.html" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/form.css" />
+  <script type="module" src="scripts/form.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Submit a Trail Review</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="trails.html">Trails</a>
+      <a href="review.html" class="active">Submit Review</a>
+    </nav>
+  </header>
+  <main>
+    <form method="get" action="review-action.html">
+      <label for="trail">Trail Name</label>
+      <input type="text" id="trail" name="trail" required autocomplete="on" />
+
+      <label for="reviewer">Your Name</label>
+      <input type="text" id="reviewer" name="reviewer" required autocomplete="on" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+      <label for="rating">Rating</label>
+      <select id="rating" name="rating" required>
+        <option value="">Choose a rating</option>
+        <option value="5">5 - Amazing</option>
+        <option value="4">4 - Great</option>
+        <option value="3">3 - Good</option>
+        <option value="2">2 - Okay</option>
+        <option value="1">1 - Poor</option>
+      </select>
+
+      <label for="comments">Comments</label>
+      <textarea id="comments" name="comments"></textarea>
+
+      <input type="hidden" id="timestamp" name="timestamp" />
+
+      <button type="submit">Submit Review</button>
+    </form>
+    <div id="modal" class="modal">
+        <div class="modal-content-wrapper">
+          <p id="modal-content"></p>
+          <button onclick="import('./scripts/modal.js').then(m => m.closeModal())">Close</button>
+        </div>
+    </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="trails.html">Trails</a>
+        <a href="review.html">Submit Review</a>
+      </nav>  
+  </main>
+  <footer>
+    <p>&copy; 2025 Local Hiking Trails Guide | Last Updated: <span id="last-modified"></span></p>
+  </footer>
+  <script>
+    document.getElementById("timestamp").value = new Date().toISOString();
+    document.getElementById("last-modified").textContent = document.lastModified;
+  </script>
+</body>
+</html>
+
+ 

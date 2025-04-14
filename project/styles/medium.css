@@ -1,0 +1,52 @@
+/* medium.css */
+
+body {
+    font-size: 1.1rem;
+    padding: 1rem;
+    line-height: 1.6;
+  }
+  
+  header {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+  
+  .trail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  form label,
+  form input,
+  form textarea,
+  form select,
+  form button {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  

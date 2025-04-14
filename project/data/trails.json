@@ -1,0 +1,123 @@
+[
+    {
+      "name": "Teton Canyon Trail",
+      "location": "Driggs, ID",
+      "difficulty": "Moderate",
+      "length": "8.0 miles",
+      "image": "images/Teton-Canyon.jpg",
+      "description": "A scenic trail offering forest views and access to Table Mountain."
+    },
+    {
+      "name": "Green Canyon",
+      "location": "Rexburg, ID",
+      "difficulty": "Easy",
+      "length": "3.2 miles",
+      "image": "images/Green-Canyon.jpg",
+      "description": "Family-friendly trail through a peaceful canyon with picnic areas."
+    },
+    {
+      "name": "Darby Wind Cave Trail",
+      "location": "Darby, ID",
+      "difficulty": "Challenging",
+      "length": "5.4 miles",
+      "image": "images/Darby-Wind-Cave.jpg",
+      "description": "A moderate hike leading to a dramatic cave and waterfall."
+    },
+    {
+      "name": "Mesa Falls Trail",
+      "location": "Ashton, ID",
+      "difficulty": "Easy",
+      "length": "1.2 miles",
+      "image": "images/Mesa-Falls.jpg",
+      "description": "Short and easy trail leading to spectacular views of Upper Mesa Falls."
+    },
+    {
+      "name": "Sawtell Peak Trail",
+      "location": "Island Park, ID",
+      "difficulty": "Moderate",
+      "length": "6.0 miles",
+      "image": "images/Sawtell-peak.jpg",
+      "description": "A trail with panoramic views of Henry’s Lake and surrounding peaks."
+    },
+    {
+      "name": "Packsaddle Lake Trail",
+      "location": "Tetonia, ID",
+      "difficulty": "Easy",
+      "length": "2.0 miles",
+      "image": "images/Packsaddle-Lake.jpg",
+      "description": "Gentle hike leading to a peaceful mountain lake, great for swimming."
+    },
+    {
+      "name": "Moody Creek Trail",
+      "location": "Rexburg, ID",
+      "difficulty": "Moderate",
+      "length": "4.5 miles",
+      "image": "images/moody-creek.jpg",
+      "description": "A forested trail with light elevation gain and wildlife sightings."
+    },
+    {
+      "name": "Table Rock Trail",
+      "location": "Driggs, ID",
+      "difficulty": "Hard",
+      "length": "11 miles",
+      "image": "images/Table-Rock.jpg",
+      "description": "A challenging ascent with one of the best views of the Tetons."
+    },
+    {
+      "name": "Warm River Rail Trail",
+      "location": "Ashton, ID",
+      "difficulty": "Easy",
+      "length": "9.0 miles",
+      "image": "images/Warm-River-Rail.jpg",
+      "description": "Converted rail line great for biking, running, and scenic walks."
+    },
+    {
+      "name": "Kelly Canyon Loop",
+      "location": "Ririe, ID",
+      "difficulty": "Moderate",
+      "length": "4.8 miles",
+      "image": "images/Kelly-Canyon.jpg",
+      "description": "Loop trail through wooded terrain with wildflowers in summer."
+    },
+    {
+      "name": "Bitch Creek Trail",
+      "location": "Tetonia, ID",
+      "difficulty": "Challenging",
+      "length": "7.3 miles",
+      "image": "images/Bitch-Creek.jpg",
+      "description": "Remote and rugged trail along the scenic Bitch Creek canyon."
+    },
+    {
+      "name": "R Mountain Hike",
+      "location": "Menan, ID",
+      "difficulty": "Moderate",
+      "length": "2.4 miles",
+      "image": "images/r-mountain.jpg",
+      "description": "Volcanic butte hike with excellent views of the Snake River Plain."
+    },
+    {
+      "name": "Beaver Dick Park Trail",
+      "location": "Rexburg, ID",
+      "difficulty": "Easy",
+      "length": "1.0 miles",
+      "image": "images/Beaver-Dick-park.jpg",
+      "description": "Simple loop through a riverside park, perfect for families and pets."
+    },
+    {
+      "name": "Big Elk Creek Trail",
+      "location": "Swan Valley, ID",
+      "difficulty": "Moderate",
+      "length": "8.7 miles",
+      "image": "images/Big-Elk-Creek.webp",
+      "description": "Forested trail along the creek with peaceful surroundings and wildlife."
+    },
+    {
+      "name": "Horseshoe Canyon",
+      "location": "Dubois, ID",
+      "difficulty": "Moderate",
+      "length": "5.0 miles",
+      "image": "images/Horseshoe-Canyon.jpg",
+      "description": "Open canyon trail with unique rock formations and desert views."
+    }
+  ]
+  

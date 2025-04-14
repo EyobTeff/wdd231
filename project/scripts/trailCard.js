@@ -1,4 +1,4 @@
-// scripts/trails.js
+
 
 const trailList = document.getElementById("trail-list");
 

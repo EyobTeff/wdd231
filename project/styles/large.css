@@ -1,14 +1,13 @@
-/* styles/large.css */
 
-/* Set a wider container size */
+
+
 body {
-    max-width: 90rem; /* Equivalent to 1440px assuming 1rem = 16px */
+    max-width: 90rem; 
     margin: 0 auto;
     padding: 2rem;
     font-size: 1rem;
   }
   
-  /* Trail card styles for larger screens */
   .trail-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -30,7 +29,7 @@ body {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
   
-  /* Optional: Make images inside cards cover full width nicely */
+  
   .trail-card img {
     width: 100%;
     height: auto;
@@ -53,8 +52,8 @@ body {
   }
   .hero {
     position: relative;
-    width: 100vw; /* Full viewport width */
-    margin-left: calc(-50vw + 50%); /* Cancels container padding if needed */
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%); 
     overflow: hidden;
     text-align: center;
   }

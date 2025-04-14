@@ -1,4 +1,4 @@
-// trails.js
+
 const trailList = document.getElementById('trail-list');
 const modal = document.getElementById('trail-modal');
 const modalBody = document.getElementById('modal-body');
@@ -37,7 +37,7 @@ function renderTrailCard(trail) {
       favorites = favorites.filter(name => name !== trail.name);
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    renderTrails(); // re-render with updated state
+    renderTrails(); 
   });
 
   return card;
